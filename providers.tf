@@ -9,11 +9,11 @@ terraform {
       version = "3.15.0"
     }
   }
-    backend "azurerm" {
-    resource_group_name  = "khaled_perso"
-    storage_account_name = "khaledstorag"
-    container_name       = "firstcontainer"
-    key                  = "terraform.tfstate"
-  }
+#     backend "azurerm" {
+#     resource_group_name  = "khaled_perso"
+#     storage_account_name = "khaledstorag"
+#     container_name       = "firstcontainer"
+#     key                  = "terraform.tfstate"
+#   }
 }
 
