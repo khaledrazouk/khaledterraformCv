@@ -10,3 +10,9 @@ terraform {
     }
   }
 }
+  backend "azurerm" {
+    resource_group_name  = "khaled_perso"
+    storage_account_name = "khaledstorag"
+    container_name       = "firstcontainer"
+    key                  = "terraform.tfstate"
+  }
