@@ -7,12 +7,10 @@ resource "azurerm_service_plan" "plan" {
   name                = var.app_service_plan_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  os_type             = "windows" # "Windows", "Linux"
+  os_type             = "windows"
   sku_name            = "S1"
 }
-# module {
-  #source = "https://"
-# }
+
 resource "azurerm_windows_web_app" "app" {
   name                = var.app_service_name
   location            = azurerm_resource_group.rg.location
@@ -20,9 +18,8 @@ resource "azurerm_windows_web_app" "app" {
   service_plan_id     = azurerm_service_plan.plan.id
 
   site_config {
-    # dotnet_framework_version = "v4.0" # deprecated
     always_on = false
- 
+
   }
 
   app_settings = {
